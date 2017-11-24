@@ -8,4 +8,8 @@ Follow issue template
 
 # Pull requests
 
-Once you've done with your current branch create a pull request
+Once you've done with your current branch, run tests and create a pull request if all tests passed
+
+# Tests
+
+More instructions to come later
