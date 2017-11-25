@@ -1,4 +1,8 @@
-# GOAL
-describe goal of the issue
+# Description
+describe the issue below
+- title
+- short description
 # Targets
-describe targets
+describe targets below if necessary
+- milestone
+- release
