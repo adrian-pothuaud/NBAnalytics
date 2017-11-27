@@ -1,0 +1,30 @@
+{
+  "name": "nbanalytics",
+  "version": "0.0.1",
+  "description": "console application to play with data from NBA stats and make predictions",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/adrianpothuaud/NBAnalytics.git"
+  },
+  "keywords": [
+    "mongodb",
+    "json",
+    "data",
+    "analytics",
+    "predictions",
+    "cloud"
+  ],
+  "author": "Adrian Pothuaud, Guillaume Lesieur, Geoffroy Roux",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/adrianpothuaud/NBAnalytics/issues"
+  },
+  "homepage": "https://github.com/adrianpothuaud/NBAnalytics#readme",
+  "dependencies": {
+    "chalk": "^2.3.0"
+  }
+}
