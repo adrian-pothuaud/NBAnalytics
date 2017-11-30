@@ -5,3 +5,5 @@ var TeamSchema = new Schema({
     TeamId:  Number,
     TeamName: String
 });
+
+exports = TeamSchema;

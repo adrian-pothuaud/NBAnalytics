@@ -25,3 +25,5 @@ var ActionsSchema = new Schema({
     Points: Number,
     Starter: Number
  });
+
+exports = ActionsSchema;

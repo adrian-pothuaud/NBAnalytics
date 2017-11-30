@@ -5,3 +5,5 @@ var PlayerSchema = new Schema({
     PlayerId:  Number,
     PlayerName: String
 });
+
+exports = PlayerSchema;

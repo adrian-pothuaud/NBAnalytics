@@ -9,3 +9,5 @@ var GameSchema = new Schema({
     URL: String,
     Date: Date
 });
+
+exports = GameSchema;
