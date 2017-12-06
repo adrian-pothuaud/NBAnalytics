@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
-import GameSchema from 'Game';
 
-var Game = mongoose.model('Game', GameSchema);
+//Import schema
+var GameSchema = require('../schemas/Game.js');
 
-module.exports = Game;
+//Create model from schema
+var GameModel = mongoose.model('Game', GameSchema);
+
+module.exports = GameModel;

@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
-import ActionsSchema from 'Actions';
 
-var Actions = mongoose.model('Actions', ActionsSchema);
+//Import schema
+var ActionsSchema = require('../schemas/Actions.js');
 
-module.exports = Actions;
+//Create model from schema
+var ActionsModel = mongoose.model('Actions', ActionsSchema);
+
+module.exports = ActionsModel;
+
