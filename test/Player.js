@@ -7,7 +7,7 @@ describe("Player Model", function() {
 
     before(function(done) {
         mongoose.connect(
-            "mongodb://localhost/nbanalytics", 
+            "mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytics", 
             {useMongoClient: true}
         );
         mongoose.connection.once('open', function() {
