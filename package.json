@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/adrianpothuaud/NBAnalytics#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "chalk": "^2.3.0",
     "mongoose": "^4.13.5"
   },
