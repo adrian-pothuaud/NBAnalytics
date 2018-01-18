@@ -38,4 +38,18 @@ describe("User Model", function() {
             done();
         })
     })
+
+    it("hash password for new user", function(done) {
+
+        var testPassword = "thisisaP@@sswor!";
+        var userX = new User({
+            "email": "test@gmail.com",
+            "password": testPassword
+        });
+        userX.save(function(err, user) {
+            if (err) return console.error(err);
+            assert.notEqual(testPassword, user.password);
+            done();
+        })
+    })
 })
