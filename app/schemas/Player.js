@@ -6,4 +6,4 @@ var PlayerSchema = new Schema({
     PlayerName: String
 });
 
-exports = PlayerSchema;
+module.exports = PlayerSchema;

@@ -4,6 +4,6 @@ var mongoose = require('mongoose');
 var TeamSchema = require('../schemas/Team.js')
 
 //Create model from schema
-var TeamModel = mongoose.model('Team', TeamSchema);
+var TeamModel = mongoose.model('team', TeamSchema);
 
 module.exports = TeamModel;

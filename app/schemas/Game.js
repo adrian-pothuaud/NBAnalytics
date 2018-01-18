@@ -10,4 +10,4 @@ var GameSchema = new Schema({
     Date: Date
 });
 
-exports = GameSchema;
+module.exports = GameSchema;

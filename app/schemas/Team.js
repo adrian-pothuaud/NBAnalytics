@@ -6,4 +6,4 @@ var TeamSchema = new Schema({
     TeamName: String
 });
 
-exports = TeamSchema;
+module.exports = TeamSchema;

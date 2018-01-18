@@ -26,4 +26,4 @@ var ActionsSchema = new Schema({
     Starter: Number
  });
 
-exports = ActionsSchema;
+module.exports = ActionsSchema;

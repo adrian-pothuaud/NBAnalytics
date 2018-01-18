@@ -4,6 +4,6 @@ var mongoose = require('mongoose');
 var PlayerSchema = require('../schemas/Player.js');
 
 //Create model from schema
-var PlayerModel = mongoose.model('Player', PlayerSchema);
+var PlayerModel = mongoose.model('player', PlayerSchema);
 
 module.exports = PlayerModel;
