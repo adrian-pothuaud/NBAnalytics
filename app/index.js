@@ -1,7 +1,10 @@
-var mongoose = require('mongoose'); // npm package for MongoDB
+const express = require('express')
+const app = express()
 
-mongoose.connect('mongodb://localhost/nbanalytics', function(err) { // db connection
-    if (err) { throw err; } // connection error
-    // Connected ! \\
-    console.log("You are connected to the data !");
-});
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})
