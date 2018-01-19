@@ -14,5 +14,14 @@
   </div>
 </div>
 
+<ul class="teams">
+  <% for(var i=0; i<teams.length; i++) {%>
+    <li class="team">
+      <span><%= teams[i].TeamId %></span>
+      <span><%= teams[i].TeamName %></span>
+    </li>
+  <% } %>
+</ul>
+
 </body>
 </html>
