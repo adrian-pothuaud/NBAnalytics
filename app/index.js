@@ -10,9 +10,9 @@ const app = express()
 var db
 
 // db connection
-MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytics", (err, database) => {
+MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytics", (err, client) => {
   if (err) return console.log(err)
-  db = database.db('nbanalytics')
+  db = client.db('nbanalytics')
   // App configuration
   app
     .use(express.static('public')) // public folder
