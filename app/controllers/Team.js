@@ -1,7 +1,8 @@
 module.exports = {
     "Create": function (db, newTeamObject) {
         db.collection('inserts').insertOne({a:1}, function(err, r) {
-            
+            if (err) return console.log(err)
+        })
     },
     "List": function (db) {
         db.collection('teams').find().toArray((err, result) => {
