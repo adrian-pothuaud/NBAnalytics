@@ -26,6 +26,18 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
         res.render('pages/index', {teams: result})
       })
     })
+    .get('/home', (req, res) => {
+      res.render("pages/home")
+    })
+    .get('/predictions', (req, res) => {
+      res.render("pages/predictions")
+    })
+    .get("/about",function(req,res){
+      res.render("pages/about")
+    })
+    .get("/contact",function(req,res){
+      res.render("pages/contact")
+    })
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 })
 
