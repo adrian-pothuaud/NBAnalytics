@@ -27,7 +27,7 @@ A sample web app to play with data in mongodb and predictions
 ## Authors
 
 * **Geoffrey ROUX**
-* **Guillaume LESIEUR Thompson**
+* **Guillaume LESIEUR**
 * **Adrian POTHUAUD**
 
 ## License
