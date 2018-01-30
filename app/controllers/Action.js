@@ -1,10 +1,10 @@
 var ActionModel = require("../models/Action");
 
 module.exports = {
-    List: function() {
+    List: function(handler) {
         ActionModel.find({}, function(err, actions) {
             if (err) throw err;
-            return actions;
+            handler(actions);
         })
     }
 }
