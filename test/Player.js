@@ -13,7 +13,7 @@ describe("Player Model", function() {
         mongoose.connection.once('open', function() {
             done();
         })
-        .on('error', function() {
+        .on('error', function(error) {
             console.warn('Error', error);
         })
     })
@@ -34,5 +34,18 @@ describe("Player Model", function() {
             if (err) return console.error(err);
             done();
         })
+    })
+    
+    it("can update a player", function(done) {
+        
+        Player.update({"PlayerId": {$exists:false}}, { $set: { "PlayerId": 123456789 }}, {}, done())
+    })
+    
+    it("can delete players", function(done) {
+        
+        Player.find( { $or: [{ "PlayerId": 123456789 }, {"PlayerId": {$exists:false}}]}).remove().exec(function(err, data) {
+            if (err) return console.error(err);
+            done();
+        });
     })
 })

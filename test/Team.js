@@ -13,7 +13,7 @@ describe("Team Model", function() {
         mongoose.connection.once('open', function() {
             done();
         })
-        .on('error', function() {
+        .on('error', function(error) {
             console.warn('Error', error);
         })
     })
@@ -34,5 +34,18 @@ describe("Team Model", function() {
             if (err) return console.error(err);
             done();
         })
+    })
+    
+    it("can update a team", function(done) {
+        
+        Team.update({"TeamId": {$exists:false}}, { $set: { "TeamId": 123456789 }}, {}, done())
+    })
+    
+    it("can delete teams", function(done) {
+        
+        Team.find( { $or: [{ "TeamId": 123456789 }, {"TeamId": {$exists:false}}]}).remove().exec(function(err, data) {
+            if (err) return console.error(err);
+            done();
+        });
     })
 })

@@ -13,7 +13,7 @@ describe("Game Model", function() {
         mongoose.connection.once('open', function() {
             done();
         })
-        .on('error', function() {
+        .on('error', function(error) {
             console.warn('Error', error);
         })
     })
@@ -34,5 +34,18 @@ describe("Game Model", function() {
             if (err) return console.error(err);
             done();
         })
+    })
+    
+    it("can update a game", function(done) {
+        
+        Game.update({"GameId": {$exists:false}}, { $set: { "GameId": 123456789 }}, {}, done())
+    })
+    
+    it("can delete games", function(done) {
+        
+        Game.find( { $or: [{ "GameId": 123456789 }, {"GameId": {$exists:false}}]}).remove().exec(function(err, data) {
+            if (err) return console.error(err);
+            done();
+        });
     })
 })
