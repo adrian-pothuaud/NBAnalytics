@@ -20,10 +20,28 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
     .set('view engine', 'ejs') // view engine
     // routes
     .get('/', (req, res) => {
-      db.collection('teams').find().toArray((err, result) => {
-        if (err) return console.log(err)
-        // renders index.ejs
-        res.render('pages/index', {teams: result})
+      // retrouver les teams
+      db.collection('teams').find().toArray((err, teams) => {
+        if (err) return console.log(err);
+        // retrouver les Games
+        db.collection('games').find().toArray((err, games) => {
+          if (err) return console.log(err);
+          // retrouver les Players
+          db.collection('players').find().toArray((err, players) => {
+            if (err) return console.log(err);
+            // retrouver les Actions
+            db.collection('actions').find().toArray((err, actions) => {
+              if (err) return console.log(err);
+              // renders index.ejs
+              res.render('pages/index', {
+                teams: teams,
+                actions: actions,
+                players: players,
+                games: games
+              })
+            })
+          })
+        })
       })
     })
     .get('/home', (req, res) => {
