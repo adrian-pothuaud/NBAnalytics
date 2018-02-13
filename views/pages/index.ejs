@@ -71,9 +71,43 @@
     </code> -->
     
       <div class="row">
+        <h1>Teams</h1>
         <% teams.forEach(function(team) { %>
         
             <div class="col-xs-6 col-md-4"><a><%= team.TeamName %></a></div>
+            
+        <% }); %>
+      </div>
+      
+      <hr/>
+      
+      <div class="row">
+        <h1>Players</h1>
+        <% players.forEach(function(player) { %>
+        
+            <div class="col-xs-6 col-md-4"><a><%= player.PlayerName %></a></div>
+            
+        <% }); %>
+      </div>
+      
+      <hr/>
+      
+      <div class="row">
+        <h1>Actions</h1>
+        <% actions.forEach(function(action) { %>
+        
+            <div class="col-xs-6 col-md-4"><a><%= action.GameId %></a></div>
+            
+        <% }); %>
+      </div>
+      
+      <hr/>
+      
+      <div class="row">
+        <h1>Games</h1>
+        <% games.forEach(function(game) { %>
+        
+            <div class="col-xs-6 col-md-4"><a><%= game.GameId %></a></div>
             
         <% }); %>
       </div>

@@ -23,21 +23,29 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
       // retrouver les teams
       db.collection('teams').find().toArray((err, teams) => {
         if (err) return console.log(err);
+        console.log("Finding teams...");
+        console.log(teams[0]);
         // retrouver les Games
         db.collection('games').find().toArray((err, games) => {
           if (err) return console.log(err);
+          console.log("Finding games...");
+          console.log(games[0]);
           // retrouver les Players
           db.collection('players').find().toArray((err, players) => {
             if (err) return console.log(err);
+            console.log("Finding playes...");
+            console.log(players[0]);
             // retrouver les Actions
             db.collection('actions').find().toArray((err, actions) => {
               if (err) return console.log(err);
+              console.log("Finding actions...");
+              console.log(actions[0]);
               // renders index.ejs
               res.render('pages/index', {
-                teams: teams,
-                actions: actions,
-                players: players,
-                games: games
+                'teams': teams,
+                'actions': actions,
+                'players': players,
+                'games': games
               })
             })
           })
