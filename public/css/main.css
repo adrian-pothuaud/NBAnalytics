@@ -50,6 +50,16 @@
 	box-sizing: border-box;
 }
 
+.table td {
+   text-align: center;
+}
+
+img {
+	width: 80px;
+	height: 80px;
+  display: block;
+}
+
 body, html {
 	height: 100%;
 	font-family: Poppins-Regular, sans-serif;
@@ -60,7 +70,7 @@ a {
 	font-family: Poppins-Regular;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #ffffff;
+	color: #000000;
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;

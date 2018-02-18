@@ -10,10 +10,9 @@
 
   <!-- Page Content -->
   <div class="container">
-  
+
     <!-- Introduction Row -->
-    <h1 class="my-4">NBA Analytics</h1>
-    
+
     <!--
     <p>Sports forecast, ratings and analysis of the redaction</p>
 
@@ -53,7 +52,7 @@
         <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
       </div>
     </div>
-    
+
     <h1>Retrieve data from db example below</h1>
     <h2>In index.js file</h2>
     <p>Ensure route to page is enabled with res.render(...)</p>
@@ -69,48 +68,48 @@
           &lt;% }); %&gt;
       &lt;/ul&gt;
     </code> -->
-    
-      <div class="row">
-        <h1>Teams</h1>
-        <% teams.forEach(function(team) { %>
-        
-            <div class="col-xs-6 col-md-4"><a><%= team.TeamName %></a></div>
-            
-        <% }); %>
-      </div>
-      
-      <hr/>
-      
-      <div class="row">
-        <h1>Players</h1>
-        <% players.forEach(function(player) { %>
-        
-            <div class="col-xs-6 col-md-4"><a><%= player.PlayerName %></a></div>
-            
-        <% }); %>
-      </div>
-      
-      <hr/>
-      
-      <div class="row">
-        <h1>Actions</h1>
-        <% actions.forEach(function(action) { %>
-        
-            <div class="col-xs-6 col-md-4"><a><%= action.GameId %></a></div>
-            
-        <% }); %>
-      </div>
-      
-      <hr/>
-      
-      <div class="row">
-        <h1>Games</h1>
-        <% games.forEach(function(game) { %>
-        
-            <div class="col-xs-6 col-md-4"><a><%= game.GameId %></a></div>
-            
-        <% }); %>
-      </div>
+  </br></br>
+    <div class="row">
+      <h1>Teams</h1></br></br></br>
+          </br>
+            <% teams.forEach(function(team) { %>
+              <table class="table">
+                <tbody>
+                  <td><a href="about.ejs"><%= team.TeamName %></a></td>
+                  <td>
+                    <a href="about.ejs">
+                      <img src="/img/nbalogo/<%=team.TeamName%>.svg">
+                    </a>
+                  </td>
+                </tbody>
+              </table>
+            <% }); %>
+        </div>
+      </br>
+      </br>
+
+      <h1>Games</h1></br></br></br>
+          </br>
+            <% games.forEach(function(game) { %>
+              <table class="table">
+                <tbody>
+                  <td><a href="about.ejs"><%= game.Team1Id %> - <%= game.Team2Id %></a></td>
+                </tbody>
+              </table>
+            <% }); %>
+      </br>
+      </br>
+
+        <h1>  Players</h1></br></br></br></br>
+
+          <% players.forEach(function(player) { %>
+
+            <table class="table">
+              <tbody>
+                <td><a href="about.ejs"><%= player.PlayerName %></a></td>
+              </tbody>
+            </table>
+          <% }); %>
 
   </div>
   <!-- /.container -->
