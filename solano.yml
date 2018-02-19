@@ -1,8 +1,0 @@
-build:
-  - name: Update Node version
-    command: nvm install stable
-  - name: Install dependencies
-    command: npm install
-test:
-  - name: Mocha tests
-    command: npm test

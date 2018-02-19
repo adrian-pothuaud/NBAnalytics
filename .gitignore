@@ -60,3 +60,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# cloud9 idea
+.c9

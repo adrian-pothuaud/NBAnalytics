@@ -64,6 +64,35 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
     .get("/contact",function(req,res){
       res.render("pages/contact")
     })
+    .get("/teams", (req, res) => {
+      db.collection('teams').find().toArray((err, teams) => {
+        if (err) return console.log(err);
+        // process team
+        res.render("pages/teams", {"teams": teams})
+      })
+    })
+    .get("/teams/:TeamId", (req, res) => {
+      db.collection('teams').find({'TeamId':req.params.TeamId}).toArray((err, team) => {
+        if (err) return console.log(err);
+        // process team
+        res.render("pages/teamDetails", {"team": team})
+      })
+    })
+    .get("/games", (req, res) => {
+      db.collection('games').find().toArray((err, games) => {
+        if (err) return console.log(err);
+        // process team
+        res.render("pages/games", {"games": games})
+      })
+    })
+    .get("/games/:GameId", (req, res) => {
+      db.collection('teams').find({'GameId':req.params.GameId}).toArray((err, game) => {
+        if (err) return console.log(err);
+        // process team
+        res.render("pages/gameDetails", {"team": game})
+      })
+    })
+    
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 })
 
