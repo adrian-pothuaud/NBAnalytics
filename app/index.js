@@ -92,8 +92,6 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
         res.render("pages/gameDetails", {"team": game})
       })
     })
-    
+
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 })
-
-  

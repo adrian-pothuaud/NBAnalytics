@@ -75,9 +75,9 @@
             <% teams.forEach(function(team) { %>
               <table class="table">
                 <tbody>
-                  <td><a href="about.ejs"><%= team.TeamName %></a></td>
+                  <td><a href="teamdetails.ejs"><%= team.TeamName %></a></td>
                   <td>
-                    <a href="about.ejs">
+                    <a href="teamDetails.ejs">
                       <img src="/img/nbalogo/<%=team.TeamName%>.svg">
                     </a>
                   </td>
@@ -93,7 +93,7 @@
             <% games.forEach(function(game) { %>
               <table class="table">
                 <tbody>
-                  <td><a href="about.ejs"><%= game.Team1Id %> - <%= game.Team2Id %></a></td>
+                  <td><a href="teams.ejs"><%= game.Team1Id %> - <%= game.Team2Id %></a></td>
                 </tbody>
               </table>
             <% }); %>
@@ -106,7 +106,7 @@
 
             <table class="table">
               <tbody>
-                <td><a href="about.ejs"><%= player.PlayerName %></a></td>
+                <td><a href="player.ejs"><%= player.PlayerName %></a></td>
               </tbody>
             </table>
           <% }); %>
