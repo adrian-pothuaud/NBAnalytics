@@ -75,7 +75,7 @@
             <% teams.forEach(function(team) { %>
               <table class="table">
                 <tbody>
-                  <td><a href="/teams/<%= team.TeamId %>"></a></td>
+                  <td><%= team.TeamName %></td>
                   <td>
                     <a href="/teams/<%= team.TeamId %>">
                       <img src="/img/nbalogo/<%=team.TeamName%>.svg">
