@@ -79,10 +79,20 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
       })
     })
     .get("/games/:GameId", (req, res) => {
-      db.collection('teams').findOne({'GameId':parseInt(req.params.GameId)}, (err, game) => {
+      db.collection('games').findOne({'GameId':parseInt(req.params.GameId)}, (err, game) => {
         if (err) return console.log(err);
-        // process team
-        res.render("pages/gameDetails", {"team": game})
+        // find team 1
+        db.collection('teams').find({ $or: [{'TeamId': game.Team1Id}, {'TeamId': game.Team2Id}]}, (err, teams) => {
+          if (err) return console.log(err);
+            var team1 = null;
+            var team2 = null;
+            for(var i = 0; i < 2; i++) {
+              var team = teams[i]
+              if (team.TeamId === game.Team1Id) team1 = team;
+              else team2 = team;
+            }
+            res.render("pages/gameDetails", {"game": game, 'team1': team1, 'team2': team2});
+        })
       })
     })
     .get("/actions", (req, res) => {
