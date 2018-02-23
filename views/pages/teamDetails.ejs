@@ -67,15 +67,10 @@
   <!-- Page Content -->
   <div class="container">
 <br/>
-    <% team.forEach(function(team) { %>
 
-      <table class="table">
-        <tbody>
-          <td><%= team.TeamName %></td>
-        </tbody>
-      </table>
-
-    <% }); %>
+      <%= team %>
+      <%= team["TeamId"] %>
+      <%= team.TeamName %>
 
 Hello
   </div>

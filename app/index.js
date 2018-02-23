@@ -72,9 +72,12 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
       })
     })
     .get("/teams/:TeamId", (req, res) => {
-      db.collection('teams').find({'TeamId':req.params.TeamId}).toArray((err, team) => {
+      db.collection('teams').findOne({'TeamId':parseInt(req.params.TeamId)}, (err, team) => {
         if (err) return console.log(err);
         // process team
+        console.log("Team details...");
+        console.log(req.params.TeamId)
+        console.log(team)
         res.render("pages/teamDetails", {"team": team})
       })
     })
@@ -86,10 +89,38 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
       })
     })
     .get("/games/:GameId", (req, res) => {
-      db.collection('teams').find({'GameId':req.params.GameId}).toArray((err, game) => {
+      db.collection('teams').findOne({'GameId':parseInt(req.params.GameId)}, (err, game) => {
         if (err) return console.log(err);
         // process team
         res.render("pages/gameDetails", {"team": game})
+      })
+    })
+    .get("/actions", (req, res) => {
+      db.collection('actions').find().toArray((err, actions) => {
+        if (err) return console.log(err);
+        // process team
+        res.render("pages/actions", {"actions": actions})
+      })
+    })
+    .get("/actions/:id", (req, res) => {
+      db.collection('actions').findById(parseInt(req.params.id), (err, action) => {
+        if (err) return console.log(err);
+        // process team
+        res.render("pages/actionDetails", {"action": action})
+      })
+    })
+    .get("/players", (req, res) => {
+      db.collection('players').find().toArray((err, players) => {
+        if (err) return console.log(err);
+        // process team
+        res.render("pages/players", {"players": players})
+      })
+    })
+    .get("/players/:PlayerId", (req, res) => {
+      db.collection('players').findOne({'PlayerId':parseInt(req.params.PlayerId)}, (err, player) => {
+        if (err) return console.log(err);
+        // process team
+        res.render("pages/playerDetails", {"player": player})
       })
     })
 
