@@ -93,7 +93,7 @@
             <% games.forEach(function(game) { %>
               <table class="table">
                 <tbody>
-                  <td><%= game.Team1Id %> - <%= game.Team2Id %></td>
+                  <td><a href="/games/<%=game._id%>"><%= game.Team1Id %> - <%= game.Team2Id %></a></td>
                 </tbody>
               </table>
             <% }); %>
@@ -106,7 +106,21 @@
 
             <table class="table">
               <tbody>
-                <td><a href="player.ejs"><%= player.PlayerName %></a></td>
+                <td><a href="/players/<%= player.PlayerId %>"><%= player.PlayerName %></a></td>
+              </tbody>
+            </table>
+          <% }); %>
+          
+      </br>
+      </br>
+
+        <h1>  Actions</h1></br></br></br></br>
+
+          <% actions.forEach(function(action) { %>
+
+            <table class="table">
+              <tbody>
+                <td><a href="/actions/<%= action._id %>">Game: <%= action.GameId %>, Player: <%= action.PlayerId %></a></td>
               </tbody>
             </table>
           <% }); %>

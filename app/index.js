@@ -103,7 +103,7 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
       })
     })
     .get("/actions/:id", (req, res) => {
-      db.collection('actions').findById(parseInt(req.params.id), (err, action) => {
+      db.collection('actions').findOne({'_id': parseInt(req.params.id) }, (err, action) => {
         if (err) return console.log(err);
         // process team
         res.render("pages/actionDetails", {"action": action})
