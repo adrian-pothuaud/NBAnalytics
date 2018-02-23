@@ -4,7 +4,7 @@
   "description": "console app to play with some data",
   "main": "app/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app/index.js",
     "test": "mocha --exit --timeout 5000",
     "dev": "nodemon app/index.js"
   },
