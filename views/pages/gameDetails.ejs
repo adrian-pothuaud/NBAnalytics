@@ -3,9 +3,9 @@
 <% extend('layout') %>
 <br/>
 
- <%= game %> 
- <%= team1 %> 
- <%= team2 %> 
+<!-- <%= game %> -->
+<!-- <%= team1 %> -->
+<!-- <%= team2 %> -->
 
 
 
@@ -14,11 +14,10 @@
 
   <table class="table">
     <tbody>
-      <td>  <%= game.GameId %></td>
-      <td>  <%= team1.TeamName %></td>
-      <td>  <%= team2.TeamName %></td>
-
-
+      <td> <%= team1.TeamName %></td>
+      <td> <img src="/img/nbalogo/<%=team1.TeamName%>.svg"></td>
+      <td><%= team2.TeamName %></td>
+      <td> <img src="/img/nbalogo/<%=team2.TeamName%>.svg"></td>
 
     </tbody>
   </table>
