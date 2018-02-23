@@ -79,10 +79,10 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
       })
     })
     .get("/games/:GameId", (req, res) => {
-      db.collection('teams').findOne({'GameId':parseInt(req.params.GameId)}, (err, game) => {
+      db.collection('games').findOne({'GameId':parseInt(req.params.GameId)}, (err, game) => {
         if (err) return console.log(err);
-        // process team
-        res.render("pages/gameDetails", {"team": game})
+        // process game
+        res.render("pages/gameDetails", {"game": game})
       })
     })
     .get("/actions", (req, res) => {
