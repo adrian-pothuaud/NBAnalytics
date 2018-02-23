@@ -79,22 +79,24 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
       })
     })
     .get("/games/:GameId", (req, res) => {
-      db.collection('games').findOne({'GameId':parseInt(req.params.GameId)}, (err, game) => {
-        if (err) return console.log(err);
-        // find team 1
-        db.collection('teams').findOne({'TeamId': parseInt(game.Team1Id)}, (err, team1) => {
-          if (err) return console.log(err);
-          db.collection('teams').findOne({'TeamId': parseInt(game.Team2Id)}, (err, team2) => {
+          db.collection('games').findOne({'GameId':parseInt(req.params.GameId)}, (err, game) => {
             if (err) return console.log(err);
-            db.collection('actions').find({'GameId': game.GameId}).toArray((err, actions) => {
-              if (err) return console.log(err)
-              res.render("pages/gameDetails", {"game": game, 'team1': team1, 'team2': team2, 'actions': actions});
+            // find team 1
+            db.collection('teams').findOne({'TeamId': parseInt(game.Team1Id)}, (err, team1) => {
+              if (err) return console.log(err);
+              db.collection('teams').findOne({'TeamId': parseInt(game.Team2Id)}, (err, team2) => {
+                if (err) return console.log(err);
+                db.collection('actions').find({'GameId': game.GameId}).toArray((err, actions) => {
+                  if (err) return console.log(err)
+                  db.collection('players').find({}).toArray((err, players) => {
+                    if (err) return console.log(err)
+                    res.render("pages/gameDetails", {"game": game, 'team1': team1, 'team2': team2, 'actions': actions, 'players': players});
+                  })
+                })
+              })
             })
-            
           })
         })
-      })
-    })
     .get("/actions", (req, res) => {
       db.collection('actions').find().toArray((err, actions) => {
         if (err) return console.log(err);

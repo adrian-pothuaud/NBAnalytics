@@ -1,5 +1,5 @@
 <%# views/index.ejs %>
- 
+
 <% extend('layout') %>
 
     <!-- Introduction Row -->
@@ -59,6 +59,8 @@
           &lt;% }); %&gt;
       &lt;/ul&gt;
     </code> -->
+    <input type="text" placeholder="Search..">
+
   </br></br>
     <div class="row">
       <h1>Teams</h1></br></br></br>
@@ -84,10 +86,20 @@
             <% games.forEach(function(game) { %>
               <table class="table">
                 <tbody>
-                  <td><a href="/games/<%=game._id%>"><%= game.Team1Id %> - <%= game.Team2Id %></a></td>
+                  <% teams.forEach((team1) => {
+                    if (team1.TeamId === game.Team1Id) {
+                      teams.forEach((team2 => {
+                        if (team2.TeamId === game.Team2Id) { %>
+                          <td><a href="/games/<%=game._id%>"><%= team1.TeamName %> - <%= team2.TeamName %></a></td>
+                        <% }
+                      }))
+                    }
+                  }) %>
                 </tbody>
               </table>
             <% }); %>
+      </br>
+      </br>
       </br>
       </br>
 
@@ -101,7 +113,7 @@
               </tbody>
             </table>
           <% }); %>
-          
+
       </br>
       </br>
 
