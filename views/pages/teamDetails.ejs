@@ -1,8 +1,19 @@
 <%# views/teamDetails.ejs %>
- 
+
 <% extend('layout') %>
 <br/>
 
-<%= team %>
-<%= team["TeamId"] %>
-<%= team.TeamName %>
+<!-- <%= team %> -->
+
+<div class="row">
+
+  <table class="table">
+    <tbody>
+      <td>  <%= team.TeamName %></td>
+      <td><img src="/img/nbalogo/<%=team.TeamName%>.svg"></td>
+    </tbody>
+  </table>
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src='https://en.wikipedia.org/wiki/<%= team.TeamName %>' allowfullscreen></iframe>
+  </div>
+</div>

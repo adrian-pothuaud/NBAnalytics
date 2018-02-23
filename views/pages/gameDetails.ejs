@@ -1,91 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<%# views/gameDetails.ejs %>
 
-  <title>NBA Results</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!--===============================================================================================-->
-  <link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="../css/util.css">
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
-  <!-- Custom styles for this template -->
-  <link href="../css/round-about.css" rel="stylesheet">
-  <link rel="shortcut icon" href="#" />
-</head>
-
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color: #E50189;">
-    <div class="container">
-      <a class="navbar-brand" href="#">NBA Results</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
-  <!-- Page Content -->
-  <div class="container">
+<% extend('layout') %>
 <br/>
-    <% game.forEach(function(game) { %>
 
-      <table class="table">
-        <tbody>
-          <td><%= game.ResultOfTeam1 %></td>
-        </tbody>
-      </table>
+<!-- <%= game %> -->
 
-    <% }); %>
+<div class="row">
 
-Hello
-  </div>
-
-
-
-
-
-
-
-
-</body>
-</html>
+  <table class="table">
+    <tbody>
+      <td>  <%= game.GameId %></td>
+    </tbody>
+  </table>
+</div>

@@ -16,7 +16,7 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
   // App configuration
   app
     .use(express.static('public')) // public folder
-    .engine('ejs', require('express-ejs-extend')) // add this line 
+    .engine('ejs', require('express-ejs-extend')) // add this line
     .set('views', './views') // views folder
     .set('view engine', 'ejs') // view engine
     // routes
