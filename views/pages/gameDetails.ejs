@@ -18,8 +18,16 @@
       <td>  <%= team1.TeamName %></td>
       <td>  <%= team2.TeamName %></td>
 
-
+      
 
     </tbody>
   </table>
+</div>
+<div class="row">
+<% actions.forEach(function(action) { %>
+      <ul><%= action %><% for (var prop in action ) { %>
+        <li><%= prop %>: <%= action[prop] %></li>
+      <% } %></ul>
+<% }); %>
+
 </div>

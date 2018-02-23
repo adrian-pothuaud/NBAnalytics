@@ -86,7 +86,11 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
           if (err) return console.log(err);
           db.collection('teams').findOne({'TeamId': parseInt(game.Team2Id)}, (err, team2) => {
             if (err) return console.log(err);
-            res.render("pages/gameDetails", {"game": game, 'team1': team1, 'team2': team2});
+            db.collection('actions').find({'GameId': game.GameId}).toArray((err, actions) => {
+              if (err) return console.log(err)
+              res.render("pages/gameDetails", {"game": game, 'team1': team1, 'team2': team2, 'actions': actions});
+            })
+            
           })
         })
       })
