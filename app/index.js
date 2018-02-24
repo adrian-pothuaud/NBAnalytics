@@ -81,13 +81,6 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
     .get("/games/:GameId", (req, res) => {
           db.collection('games').findOne({'GameId':parseInt(req.params.GameId)}, (err, game) => {
             if (err) return console.log(err);
-<<<<<<< HEAD
-            db.collection('actions').find({'GameId': game.GameId}).toArray((err, actions) => {
-              if (err) return console.log(err)
-              db.collection('players').find({}).toArray((err, players) => {
-                if (err) return console.log(err)
-                res.render("pages/gameDetails", {"game": game, 'team1': team1, 'team2': team2, 'actions': actions, 'players': players});
-=======
             // find team 1
             db.collection('teams').findOne({'TeamId': parseInt(game.Team1Id)}, (err, team1) => {
               if (err) return console.log(err);
@@ -100,7 +93,6 @@ MongoClient.connect("mongodb://owner:esilv123@ds123946.mlab.com:23946/nbanalytic
                     res.render("pages/gameDetails", {"game": game, 'team1': team1, 'team2': team2, 'actions': actions, 'players': players});
                   })
                 })
->>>>>>> 5f1c6c6ec3e51897bb8c330ae43045697fdde69f
               })
             })
           })
