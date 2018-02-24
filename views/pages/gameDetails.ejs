@@ -7,9 +7,6 @@
 <!-- <%= team1 %> -->
 <!-- <%= team2 %> -->
 
-
-
-
 <div class="row">
 
   <table class="table">
@@ -31,8 +28,17 @@
 <div class="row">
 <% actions.forEach(function(action) { %>
       <ul><%= action %><% for (var prop in action ) { %>
-        <li><%= prop %>: <%= action[prop] %></li>
-      <% } %></ul>
+        <% if (prop === 'FieldGoalsMade') { %>
+          <li><%= prop %>: <%= action[prop] %></li>
+        <% } %>
+        <% if (prop === 'PlayerId') { 
+          players.forEach((player) => {
+            if (player.PlayerId === action['PlayerId']) { %>
+              <li><%= prop %>: <%= player['PlayerName'] %></li>
+            <% }
+          })
+         }
+      } %></ul>
 <% }); %>
 
 </div>
