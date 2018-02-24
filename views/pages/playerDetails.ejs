@@ -1,0 +1,19 @@
+<%# views/teamDetails.ejs %>
+
+<% extend('layout') %>
+<br/>
+
+<!-- <%= player %> -->
+
+<div class="row">
+
+  <table class="table">
+    <tbody>
+      <td>  <%= player.PlayerId %></td>
+      <td>  <%= player.PlayerName %></td>
+    </tbody>
+  </table>
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src='https://en.wikipedia.org/wiki/<%= player.PlayerName %>' allowfullscreen></iframe>
+  </div>
+</div>
