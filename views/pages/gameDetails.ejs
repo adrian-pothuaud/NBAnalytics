@@ -1,0 +1,67 @@
+<%# views/gameDetails.ejs %>
+
+<% extend('layout') %>
+<br/>
+
+<!-- <%= game %> -->
+<!-- <%= team1 %> -->
+<!-- <%= team2 %> -->
+
+<div class="row">
+
+  <table class="table">
+    <tbody>
+
+      <td> <%= game.GameId %></td>
+      <td> <%= team1.TeamName %></td>
+      <td> <img src="/img/nbalogo/<%=team1.TeamName%>.svg"></td>
+      <td><%= team2.TeamName %></td>
+      <td> <img src="/img/nbalogo/<%=team2.TeamName%>.svg"></td>
+      <td></td>
+    </tbody>
+  </table>
+
+</br>
+
+  <div class="row">
+  <% actions.forEach(function(action) { %>
+        <ul class="list-group">
+        </br></br>
+
+          <%= action %><% for (var prop in action ) { %>
+            <% if (prop === 'Minutes') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'TeamId') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'FieldGoalsMade') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'ThreePointsMade') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'FieldGoalAttempts') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'ThreePointAttempts') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'FreeThrowsMade') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'FreeThrowAttempts') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'PlusMinus') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'OffensiveRebounds') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'DefensiveRebounds') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'Assists') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'PersonalFouls') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'Steals') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'Turnovers') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'BlockedShots') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'BlocksAgainst') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'Points') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+            <% if (prop === 'Starter') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li><% } %>
+          <% if (prop === 'FieldGoalsMade') { %><li class="list-group-item"><%= prop %>: <%= action[prop] %></li>
+          <% } %>
+          <% if (prop === 'PlayerId') {players.forEach((player) => {
+              if (player.PlayerId === action['PlayerId']) { %><li class="list-group-item"><%= prop %>: <%= player['PlayerName'] %></li>
+              <% }
+            })
+           }
+        } %></ul>
+  <% }); %>
+
+  </div>
+
+
+
+
+
+</div>
